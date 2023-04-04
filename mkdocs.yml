@@ -1,0 +1,10 @@
+site_name: Andee Documentation
+theme: readthedocs
+nav:
+    - Home: 'index.md'
+    - 'Andee Products': 'AnnikkenProducts.md'
+    - 'First Time Setup': 'AndeeSetup.md'
+    - 'Andee U/iOS/Android Shield':
+        - 'Before You Code': 'BeforeYouCode.md'
+        - 'Examples': 'Examples.md'
+        - 'Andee API': 'AndeeAPI.md'
