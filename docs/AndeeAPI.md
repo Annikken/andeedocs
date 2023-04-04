@@ -355,6 +355,7 @@ widget1.setId(49);
 class void setType(type)
 ```
 `type` uses macros as the input. Available types are<br/>
+
 * DATA_OUT
 * DATA_OUT_CIRCLE
 * DATA_OUT_HEADER
@@ -368,6 +369,7 @@ class void setType(type)
 * TEXTBOX
 * TTS
 * JOYSTICK
+
 ##### Example
 ```cpp
 widget1.setType(DATA_OUT);
@@ -382,7 +384,14 @@ class void setLocation(row,column,span)
 `row`, is a `char`, can be a number from 0 to 3<br/>
 `column`, is a `char`, can be a number from 0 to 3<br/>
 `span` uses macros as the input. Available macros are<br/>
-ONE_THIRD, TWO_THIRD, ONE_QUART, THREE_QUART, HALF, FULL
+
+* ONE_THIRD
+* TWO_THIRD
+* ONE_QUART
+* THREE_QUART
+* HALF
+* FULL
+
 ##### Example
 ```cpp
 widget1.setLocation(2,2,ONE_THIRD);
@@ -657,6 +666,7 @@ class void setDefaultDate(day, month, year)
 ```
 This function sets the default day when the date widget is used. When the user taps on the widget, a calendar is presented and the cursor will highlight the default day.<br/>
 Both `day` and `year` are `Integer` while `month` can accept `Integer` and months in macro. The available macros are <br/>
+
 * `Jan`
 * `Feb`
 * `Mar`
@@ -669,6 +679,7 @@ Both `day` and `year` are `Integer` while `month` can accept `Integer` and month
 * `Oct`
 * `Nov`
 * `Dec`
+
 ##### Example
 ```cpp
 widget1.setDefaultDate(07,Feb,2016);
