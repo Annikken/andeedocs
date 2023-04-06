@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Andee API - Andee Documentation</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Andee API";
+        var mkdocs_page_input_path = "AndeeAPI.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Andee Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../AnnikkenProducts/">Andee Products</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../AndeeSetup/">First Time Setup</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Andee U/iOS/Android Shield</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../BeforeYouCode/">Before You Code</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Examples/">Examples</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Andee API</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#andee-functions">Andee functions</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#begin">Begin</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#example">Example</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#change-andee-name">Change Andee Name</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#example_1">Example</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#clear-all-widgets">Clear All Widgets</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#example_2">Example</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#disconnect">Disconnect</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#example_3">Example</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#check-connection">Check Connection</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#example_4">Example</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#get-device-time">Get Device Time</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#example_5">Example</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#get-device-date">Get Device Date</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#example_6">Example</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#get-timestamp">Get Timestamp</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#example_7">Example</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#using-device-features">Using Device Features</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#vibrate-device">Vibrate Device</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#example_8">Example</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#gyroscope-sensor">Gyroscope Sensor</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#example_9">Example</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#linear-accelerometer-sensor">Linear Accelerometer Sensor</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#example_10">Example</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#gravity-sensor">Gravity Sensor</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#example_11">Example</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#gps-sensor">GPS Sensor</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#example_12">Example</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sms">SMS</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#example_13">Example</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#taking-photos">Taking Photos</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#example_14">Example</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#text-to-speech">Text to Speech</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#example_15">Example</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#notification">Notification</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#example_16">Example</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#andeehelper-functions">AndeeHelper Functions</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#set-id">Set Id</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#example_17">Example</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#set-type">Set Type</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#example_18">Example</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#set-location">Set Location</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#example_19">Example</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#set-coordinates">Set Coordinates</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#example_20">Example</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#set-color">Set Color</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#example_21">Example</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#set-data">Set Data</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#example_22">Example</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#set-title">Set Title</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#example_23">Example</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#set-units">Set Units</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#example_24">Example</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#update-widget">Update Widget</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#example_25">Example</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#remove-widget">Remove Widget</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#example_26">Example</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#set-min-max">Set Min Max</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#example_27">Example</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#input-widget-functions">Input Widget Functions</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#set-input-mode">Set Input Mode</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#example_28">Example</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#slider-widget-specific-functions">Slider Widget Specific Functions</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#move-slider-thumb">Move Slider Thumb</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#example_29">Example</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#set-the-number-of-intervals-for-slider">Set the Number of Intervals for Slider</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#example_30">Example</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#get-slider-value">Get Slider Value</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#example_31">Example</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#button-widget-specific-functions">Button Widget Specific Functions</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#ispressed">isPressed</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#example_32">Example</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#acknowledgement">Acknowledgement</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#example_33">Example</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#keyboard-widget-specific-functions">Keyboard Widget Specific Functions</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-keyboard-message">Get Keyboard Message</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#example_34">Example</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#date-widget-specific-functions">Date Widget Specific Functions</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#set-default-date">Set Default Date</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#example_35">Example</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#get-date">Get Date</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#example_36">Example</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#time-widget-specific-functions">Time Widget Specific Functions</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#set-default-time">Set Default Time</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#example_37">Example</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#get-time">Get Time</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Andee Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Andee U/iOS/Android Shield &raquo;</li>
+      <li>Andee API</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="annikken-andee-library">Annikken Andee Library</h1>
+<p>These are all the functions that can be found in the Andee Library</p>
+<h2 id="andee-functions">Andee functions</h2>
+<p>The <code>Andee</code> Class has general functions that affects the way the Andee Shield works or what it does.</p>
+<h3 id="begin">Begin</h3>
+<pre><code class="language-cpp">class void begin()
+</code></pre>
+<p>This function is required to be called before calling any other <code>Andee</code> functions. This will setup the SPI communication on the Arduino Shield. The Slave Select pin will default to pin 8.</p>
+<pre><code class="language-cpp">class void begin(pin)
+</code></pre>
+<p>If the <code>Andee</code> Slave Select pin conflicts with another shield, you can use argument <code>pin</code> to change the <code>Andee</code> Slave Select pin.</p>
+<h5 id="example">Example</h5>
+<pre><code class="language-cpp">Andee.begin();
+Andee.begin(5);
+</code></pre>
+<h3 id="change-andee-name">Change Andee Name</h3>
+<pre><code class="language-cpp">class void setName(name)
+</code></pre>
+<p>This function will change the name of the Andee Shield. This name will appear when scanning for your Andee Shield in the app. Only works on Firmware 2.00 and above.
+<code>name</code> is a <code>Character Array</code></p>
+<h5 id="example_1">Example</h5>
+<pre><code class="language-cpp">Andee.setName(&quot;My New Name&quot;);
+</code></pre>
+<h3 id="clear-all-widgets">Clear All Widgets</h3>
+<pre><code class="language-cpp">class void clear()
+</code></pre>
+<p>This function will clear all the widgets on the screen in the iOS/Android app</p>
+<h5 id="example_2">Example</h5>
+<pre><code class="language-cpp">Andee.clear();
+</code></pre>
+<h3 id="disconnect">Disconnect</h3>
+<pre><code class="language-cpp">class void disconnect()
+</code></pre>
+<p>This function will force the Andee Shield to disconnect from the iOS/Android device that it is connected to</p>
+<h5 id="example_3">Example</h5>
+<pre><code class="language-cpp">Andee.disconnect();
+</code></pre>
+<h3 id="check-connection">Check Connection</h3>
+<pre><code class="language-cpp">class int isConnected()
+</code></pre>
+<p>This function checks if the Andee Shield is connected to a device and returns an Integer.
+If the value returned is :<br/>
+<code>0</code>, the Andee Shield is not connected to a device<br/>
+<code>1</code>, the Andee Shield is connected to a device</p>
+<h5 id="example_4">Example</h5>
+<pre><code class="language-cpp">connected = Andee.isConnected();
+</code></pre>
+<h3 id="get-device-time">Get Device Time</h3>
+<pre><code class="language-cpp">class void getDeviceTime(*hour,*min,*sec)
+</code></pre>
+<p>This function will get the time from the device that it is connected to.
+The time from the device will be stored in the <code>hour</code>,<code>min</code> and <code>sec</code> arguments in <code>Integer</code></p>
+<h5 id="example_5">Example</h5>
+<pre><code class="language-cpp">Andee.getDeviceTime(&amp;hour,&amp;min,&amp;sec);
+</code></pre>
+<h3 id="get-device-date">Get Device Date</h3>
+<pre><code class="language-cpp">class void getDeviceDate(*day,*month,*year)
+</code></pre>
+<p>This function will get the date from the device that it is connected to.
+The date from the device will be stored in the <code>day</code>, <code>month</code> and <code>year</code> arguments in <code>Integer</code></p>
+<h5 id="example_6">Example</h5>
+<pre><code class="language-cpp">Andee.getDeviceDate(&amp;day,&amp;month,&amp;year)
+</code></pre>
+<h3 id="get-timestamp">Get Timestamp</h3>
+<pre><code class="language-cpp">class long getDeviceTimeStamp()
+</code></pre>
+<p>This function will get and return the timestamp in millis from the device that it is connected to.
+The return value will be a <code>Long</code></p>
+<h5 id="example_7">Example</h5>
+<pre><code class="language-cpp">timeStamp = Andee.getDeviceTimeStamp();
+</code></pre>
+<h2 id="using-device-features">Using Device Features</h2>
+<p>The functions below makes use of the functions on the smart device. If the device does not have a particular feature, for example not all smartphones have a gyroscope, then the function will not work</p>
+<h3 id="vibrate-device">Vibrate Device</h3>
+<pre><code class="language-cpp">class void vibrate()
+</code></pre>
+<p>This function will cause the connected device to vibrate for approximately 1 second</p>
+<h5 id="example_8">Example</h5>
+<pre><code class="language-cpp">Andee.vibrate();
+</code></pre>
+<h3 id="gyroscope-sensor">Gyroscope Sensor</h3>
+<pre><code class="language-cpp">class void gyroInit(interval,iteration)
+</code></pre>
+<p>This function will activate the gyroscope sensor on the device. The function can only be called once, unless the arguments are changed. The iOS/Android device will restart the interval timer each time this function is called.<br/>
+<code>interval</code>, is an <code>Integer</code>, will set the time interval in ms before sending another gyro data.<br/>
+<code>iteration</code>, is an <code>Integer</code>, will set the amount of times the gyro data should be sent.
+Set <code>iteration</code> to <code>-1</code> for infinite iterations<br/></p>
+<p>Once the initialisation has been called, call the function below to get the gyroscope values.</p>
+<pre><code class="language-cpp">class void getGyroReading(*xAxis,*yAxis,*zAxis)
+</code></pre>
+<p>The values from the gyroscope sensor will be stored in the <code>xAxis</code>,<code>yAxis</code> and <code>zAxis</code> arguments in <code>Float</code><br/></p>
+<p>The readings can be stopped anytime by calling</p>
+<pre><code class="language-cpp">class void gyroStop()
+</code></pre>
+<h5 id="example_9">Example</h5>
+<pre><code class="language-cpp">Andee.gyroInit(200,-1);//App will send data unlimited times at 200ms interval
+
+Andee.getGyroReading(&amp;xAxis,&amp;yAxis,&amp;zAxis);
+
+Andee.gyroStop();
+</code></pre>
+<h3 id="linear-accelerometer-sensor">Linear Accelerometer Sensor</h3>
+<pre><code class="language-cpp">class void lacInit(interval,iteration)
+</code></pre>
+<p>This function will activate the Linear Accelerometer(LAC) sensor on the device. The function can only be called once, unless the arguments are changed. The iOS/Android device will restart the interval timer each time this function is called.<br/></p>
+<p><code>interval</code>, is an <code>Integer</code>, and will set the time interval in ms before sending another LAC data.<br/>
+<code>iteration</code>, is an <code>Integer</code>, and will set the amount of times the LAC data should be sent.
+Set <code>iteration</code> to <code>-1</code> for infinite iterations<br/></p>
+<p>Once the initialisation has been called, call the function below to get the LAC values.</p>
+<pre><code class="language-cpp">class void getLacReading(*xAxis,*yAxis,*zAxis)
+</code></pre>
+<p>The values from the LAC sensor will be stored in the <code>xAxis</code>,<code>yAxis</code> and <code>zAxis</code> arguments in <code>Float</code><br/></p>
+<p>The readings can be stopped anytime by calling</p>
+<pre><code class="language-cpp">class void lacStop()
+</code></pre>
+<h5 id="example_10">Example</h5>
+<pre><code class="language-cpp">Andee.lacInit(200,-1);//App will send data unlimited times at 200ms interval
+
+Andee.getLacReading(&amp;xAxis,&amp;yAxis,&amp;zAxis);
+
+Andee.lacStop();
+</code></pre>
+<h3 id="gravity-sensor">Gravity Sensor</h3>
+<pre><code class="language-cpp">class void gravInit(interval,iteration)
+</code></pre>
+<p>This function will activate the gravity sensor on the device. The function can only be called once, unless the arguments are changed. The iOS/Android device will restart the interval timer each time this function is called.<br/></p>
+<p><code>interval</code>, is an <code>Integer</code>, will set the time interval in ms before sending another gravity data.<br/>
+<code>iteration</code>, is an <code>Integer</code>, will set the amount of times the gravity data should be sent.
+Set <code>iteration</code> to <code>-1</code> for infinite iterations<br/></p>
+<p>Once the initialisation has been called, call the function below to get the gravity values.</p>
+<pre><code class="language-cpp">class void getGravReading(*xAxis,*yAxis,*zAxis)
+</code></pre>
+<p>The values from the gravity sensor will be stored in the <code>xAxis</code>,<code>yAxis</code> and <code>zAxis</code> arguments in <code>Float</code><br/></p>
+<p>The readings can be stopped anytime by calling</p>
+<pre><code class="language-cpp">class void gravStop()
+</code></pre>
+<h5 id="example_11">Example</h5>
+<pre><code class="language-cpp">Andee.gravInit(200,-1);//App will send data unlimited times at 200ms interval
+
+Andee.getGravReading(&amp;xAxis,&amp;yAxis,&amp;zAxis);
+
+Andee.gravStop();
+</code></pre>
+<h3 id="gps-sensor">GPS Sensor</h3>
+<pre><code class="language-cpp">class void gpsInit(interval,iteration)
+</code></pre>
+<p>This function will activate the GPS sensor on the device. The function can only be called once, unless the arguments are changed. The iOS/Android device will restart the interval timer each time this function is called.<br/></p>
+<p><code>interval</code>, is an <code>Integer</code>, will set the time interval in ms before sending another GPS data.<br/>
+<code>iteration</code>, is an <code>Integer</code>, will set the amount of times the GPS data should be sent.
+Set <code>iteration</code> to <code>-1</code> for infinite iterations<br/></p>
+<p>Once the initialisation has been called, call the function below to get the GPS values.</p>
+<pre><code class="language-cpp">class void getGpsReading(*xAxis,*yAxis)
+</code></pre>
+<p>The values from the GPS sensor will be stored in the <code>xAxis</code> and <code>yAxis</code> arguments in <code>Float</code><br/>
+The readings can be stopped anytime by calling</p>
+<pre><code class="language-cpp">class void gpsStop()
+</code></pre>
+<h5 id="example_12">Example</h5>
+<pre><code class="language-cpp">Andee.gpsInit(200,-1);//App will send data unlimited times at 200ms interval
+
+Andee.getGpsReading(&amp;xAxis,&amp;yAxis);
+
+Andee.gpsStop();
+</code></pre>
+<h3 id="sms">SMS</h3>
+<pre><code class="language-cpp">class void sendSMS(phone_number, message)
+</code></pre>
+<p>This function will send an SMS through the connected device. <br/>
+<code>phone_number</code>, is a <code>Character Array</code>, will be the recipient's phone number<br/>
+<code>message</code>, is a <code>Character Array</code>, will be the content of the SMS</p>
+<h5 id="example_13">Example</h5>
+<pre><code class="language-cpp">Andee.sendSMS(98452618, &quot;Hello from my Andee&quot;);
+</code></pre>
+<h3 id="taking-photos">Taking Photos</h3>
+<pre><code class="language-cpp">class void takePhoto(cameraType,autoFocus,flash)
+</code></pre>
+<p>This function will make the connected device take 1 photo depending on the arguments below<br/>
+For <code>cameraType</code> use either
+* <code>CAM_DEFAULT</code> to use default camera
+* <code>FRONT</code> to use Front Camera
+* <code>BACK</code> to use Rear Camera <br/>
+For<code>autoFocus</code> use
+* <code>ON</code> to switch on auto focus
+* <code>OFF</code> to switch off auto focus <br/>
+For <code>flash</code> use
+* <code>ON</code> to switch on flash
+* <code>OFF</code> to switch off flash</p>
+<h5 id="example_14">Example</h5>
+<pre><code class="language-cpp">Andee.takePhoto(BACK,ON,ON);
+</code></pre>
+<h3 id="text-to-speech">Text to Speech</h3>
+<pre><code class="language-cpp">class void textToSpeech(speech,speed,pitch,accent)
+</code></pre>
+<p>This function will activate the text to speech(TTS) function on the device. The app will then speak the text in the speech string. The arguments are<br/>
+<code>speech</code>, is a <code>Character Array</code>, that the device will speak<br/>
+<code>speed</code>, is a <code>Float</code>, is the speed of the speech<br/>
+<code>pitch</code>, is a <code>Float</code>, is the pitch of the voice<br/>
+<code>accent</code> of the voice. Use <br/>
+* <code>US</code>
+* <code>GREAT_BRITON</code>
+* <code>AUSTRALIA</code>
+* <code>IRELAND</code>
+* <code>SOUTH_AFRICA</code><br/>
+Android devices require installation of the required language pack to use different accents.</p>
+<h5 id="example_15">Example</h5>
+<pre><code class="language-cpp">Andee.textToSpeech(&quot;This is Annikken Andee&quot;,1.0,0.5,US);
+</code></pre>
+<h3 id="notification">Notification</h3>
+<pre><code class="language-cpp">class void notification(title,message,ticker)
+</code></pre>
+<p>This function will pop a notification on the connected device. This only works on <strong>Android devices</strong>. The arguments are<br/>
+<code>title</code>, is a <code>Character Array</code>, is the title of the notification<br/>
+<code>message</code>, is a <code>Character Array</code>, is the main text of the notification<br/>
+<code>ticker</code>, is a <code>Character Array</code>, is the small text when the notification has not been expanded yet</p>
+<h5 id="example_16">Example</h5>
+<pre><code class="language-cpp">Andee.notification(&quot;Andee Notify&quot;,&quot;Just some text for the body of the SMS&quot;,&quot;Andee&quot;);
+</code></pre>
+<hr />
+<h2 id="andeehelper-functions">AndeeHelper Functions</h2>
+<p>The <code>AndeeHelper</code> Class has functions that help the user create the widgets on the app. A new instantiation of the class has to be made for each widget. For example,</p>
+<pre><code class="language-cpp">AndeeHelper widget1;//1 instantiation
+AndeeHelper widget2;//Another instantiation
+
+widget1.setId(5);//when using one of the functions below
+</code></pre>
+<p>You can then use the functions below with each instantiation. Every example from here onwards will use widget1 as the example.</p>
+<h3 id="set-id">Set Id</h3>
+<pre><code class="language-cpp">class void setId(id)
+</code></pre>
+<p>Set widget id
+<code>id</code>, is a <code>char</code>, can be a number from 0 to 49</p>
+<h5 id="example_17">Example</h5>
+<pre><code class="language-cpp">widget1.setId(49);
+</code></pre>
+<h3 id="set-type">Set Type</h3>
+<pre><code class="language-cpp">class void setType(type)
+</code></pre>
+<p><code>type</code> uses macros as the input. Available types are<br/></p>
+<ul>
+<li>DATA_OUT</li>
+<li>DATA_OUT_CIRCLE</li>
+<li>DATA_OUT_HEADER</li>
+<li>BUTTON_IN</li>
+<li>CIRCLE_BUTTON</li>
+<li>ANALOG_DIAL_OUT</li>
+<li>KEYBOARD_IN</li>
+<li>DATE_IN</li>
+<li>TIME_IN</li>
+<li>SLIDER_IN</li>
+<li>TEXTBOX</li>
+<li>TTS</li>
+<li>JOYSTICK</li>
+</ul>
+<h5 id="example_18">Example</h5>
+<pre><code class="language-cpp">widget1.setType(DATA_OUT);
+</code></pre>
+<h3 id="set-location">Set Location</h3>
+<pre><code class="language-cpp">class void setLocation(row,column,span)
+</code></pre>
+<p><code>row</code>, is a <code>char</code>, can be a number from 0 to 3<br/>
+<code>column</code>, is a <code>char</code>, can be a number from 0 to 3<br/>
+<code>span</code> uses macros as the input. Available macros are<br/></p>
+<ul>
+<li>ONE_THIRD</li>
+<li>TWO_THIRD</li>
+<li>ONE_QUART</li>
+<li>THREE_QUART</li>
+<li>HALF</li>
+<li>FULL</li>
+</ul>
+<h5 id="example_19">Example</h5>
+<pre><code class="language-cpp">widget1.setLocation(2,2,ONE_THIRD);
+</code></pre>
+<h3 id="set-coordinates">Set Coordinates</h3>
+<pre><code class="language-cpp">class void setCoord(xCoordinate,yCoordinate,width,height)
+</code></pre>
+<p><code>xCoordinate</code>, is an <code>Integer</code>, can be a number from 0 to 100<br/>
+<code>yCoordinate</code>, is an <code>Integer</code>, can be a number from 0 to 100<br/>
+<code>width</code>, is an <code>Integer</code>, can be a number from 0 to 100<br/>
+<code>height</code>, is an <code>Integer</code>, can be a number from 0 to 100</p>
+<h5 id="example_20">Example</h5>
+<pre><code class="language-cpp">widget1.setCoord(0,0,100,25);
+</code></pre>
+<h3 id="set-color">Set Color</h3>
+<p>The widget has a few colors that can be customised. The widget body, widget body text, widget title and widget title text.</p>
+<pre><code class="language-cpp">class void setColor(color)
+</code></pre>
+<p>This is to set widget body color<br/></p>
+<pre><code class="language-cpp">class void setTextColor(color)
+</code></pre>
+<p>This is to set widget body text color<br/></p>
+<pre><code class="language-cpp">class void setTitleColor(color)
+</code></pre>
+<p>This is to set widget title color<br/></p>
+<pre><code class="language-cpp">class void setTitleTextColor(color)
+</code></pre>
+<p>This is to set widget title text color<br/></p>
+<p><code>color</code> is a <code>Character Array</code>. <code>color</code> should be a color hex in the form of AARRGGBB, where A is alpha, R is red, g is green and B is blue. For example, "FFFF0000" is red. There are also macros that can be used. All the possible macros will be listed <a href="../Andee_Color/">here</a>.<br/></p>
+<h5 id="example_21">Example</h5>
+<pre><code class="language-cpp">widget1.setColor(WHITE);
+widget1.setTextColor(RED);
+widget1.setTitleColor(DARK_RED);
+widget1.setTitleTextColor(WHITE);
+</code></pre>
+<h3 id="set-data">Set Data</h3>
+<pre><code class="language-cpp">class void setData(data)
+class void setData(dataFloat,decimalPlace)
+</code></pre>
+<p>This function sets the widget data display.<br/>
+<code>data</code> can accept an <code>Integer</code>and a <code>Character Array</code><br/>
+<code>dataFloat</code> accepts a <code>Float</code> and a decimal place needs to be specified at <code>decimalPlace</code></p>
+<h5 id="example_22">Example</h5>
+<pre><code class="language-cpp">widget1.setData(345);
+or
+widget1.setData(&quot;Info Here&quot;);
+or
+widget1.setData(1.345,3);
+</code></pre>
+<h3 id="set-title">Set Title</h3>
+<pre><code class="language-cpp">class void setTitle(title)
+class void setTitle(titleFloat,decimalPlace)
+</code></pre>
+<p>This function sets the widget title display.<br/>
+<code>title</code> can accept an <code>Integer</code>and a <code>Character Array</code>. <br/>
+<code>titleFloat</code> accepts a <code>Float</code> and a decimal place needs to be specified at <code>decimalPlace</code></p>
+<h5 id="example_23">Example</h5>
+<pre><code class="language-cpp">widget1.setTitle(345);
+or
+widget1.setTitle(&quot;Header Here&quot;);
+or
+widget1.setTitle(1.345,3);
+</code></pre>
+<h3 id="set-units">Set Units</h3>
+<pre><code class="language-cpp">class void setUnit(units)
+class void setUnit(unitFloat,decimalPlace)
+</code></pre>
+<p>This function sets the widget units display.<br/>
+<code>units</code> can accept an <code>Integer</code>and a <code>Character Array</code>. <br/>
+<code>unitFloat</code> accepts a <code>Float</code> and a decimal place needs to be specified at <code>decimalPlace</code></p>
+<h5 id="example_24">Example</h5>
+<pre><code class="language-cpp">widget1.setUnit(345);
+or
+widget1.setUnit(&quot;Extra Info Here&quot;);
+or
+widget1.setUnit(1.345,3);
+</code></pre>
+<h3 id="update-widget">Update Widget</h3>
+<pre><code class="language-cpp">class void update()
+</code></pre>
+<p>This function is very important to the Annikken Andee. If this function is not called, the widget will not appear. This function can be called at specific parts of the sketch to control the way the widget is updated.</p>
+<h5 id="example_25">Example</h5>
+<pre><code class="language-cpp">widget1.update();
+</code></pre>
+<h3 id="remove-widget">Remove Widget</h3>
+<pre><code class="language-cpp">class void remove()
+</code></pre>
+<p>This function tells the connected device to remove the corresponding widget when called.</p>
+<h5 id="example_26">Example</h5>
+<pre><code class="language-cpp">widget1.remove();
+</code></pre>
+<h3 id="set-min-max">Set Min Max</h3>
+<p><strong>Note:</strong>This function is only for <code>Slider</code> and <code>Analog Circle</code> Widgets</p>
+<pre><code class="language-cpp">class void setMinMax(min,max)
+class void setMinMax(minFloat,maxFloat,decimalPlace)
+</code></pre>
+<p>This function sets the minimum and maximum value for the <code>Slider</code> and <code>Analog Circle</code> widgets.<br/>
+<code>min</code> and <code>max</code> are <code>Integer</code>. <br/>
+<code>minFloat</code> and <code>maxFloat</code> are <code>Float</code> and a decimal place needs to be specified at <code>decimalPlace</code></p>
+<h5 id="example_27">Example</h5>
+<pre><code class="language-cpp">widget.setMinMax(0,50)
+or
+widget1.setMinMax(0.00,50.00,2);
+</code></pre>
+<h2 id="input-widget-functions">Input Widget Functions</h2>
+<p><strong> The functions below are only needed if the <code>Slider</code>,<code>Button</code>,<code>Circle Button</code>,<code>Date</code>,<code>Time</code> and <code>Keyboard</code> widgets are used</strong></p>
+<h3 id="set-input-mode">Set Input Mode</h3>
+<pre><code class="language-cpp">class void setInputMode(mode)
+</code></pre>
+<p><code>mode</code> uses macros as the input. Available macros are: <br/>
+For <code>BUTTON_IN</code> and <code>CIRCLE_BUTTON</code>, use <code>ACK</code> for acknowledged button presses or <code>NO_ACK</code> for a multi press button.<br/></p>
+<p>For <code>SLIDER_IN</code>, use <code>ON_FINGER_UP</code> for a slider that updates the value upon lifting the finger from the screen,<code>ON_VALUE_CHANGE</code> for a slider that updates the value as soon as the values change or <code>NO_FINGER</code> for a slider that looks like a progress bar,with no interaction needed<br/></p>
+<p>For <code>KEYBOARD_IN</code>, use <code>ALPHA_NUMERIC</code> for AlphaNumeric Keyboard, <code>ALPHA_NUMERIC_PW</code> for AlphaNumeric keyboard that hides the typed character after a few seconds, <code>NUMERIC</code> for a Numeric Keyboard with symbols or <code>NUMERIC_PW</code> for a Numeric Keyboard that hides typed characters after a few seconds<br/></p>
+<p>Both <code>Date</code> and <code>Time</code> only have 1 input mode</p>
+<h5 id="example_28">Example</h5>
+<pre><code class="language-cpp">widget1.setType(BUTTON_IN);
+widget1.setInputMode(ACK);
+</code></pre>
+<h2 id="slider-widget-specific-functions">Slider Widget Specific Functions</h2>
+<p><strong>The next 3 functions are only used for slider widgets</strong></p>
+<h3 id="move-slider-thumb">Move Slider Thumb</h3>
+<pre><code class="language-cpp">class void moveSliderToValue(value)
+class void moveSliderToValue(valueFloat,decimalPlace)
+</code></pre>
+<p>This function moves the slider thumb to the position as defined in the argument <code>value</code> or <code>valueFloat</code><br/>
+<code>value</code> is an integer. <br/>
+<code>valueFloat</code> is a <code>Float</code> and a decimal place needs to be specified at <code>decimalPlace</code></p>
+<h5 id="example_29">Example</h5>
+<pre><code class="language-cpp">widget1.moveSliderToValue(50);
+or
+widget1.moveSliderToValue(34.4,1);
+</code></pre>
+<h3 id="set-the-number-of-intervals-for-slider">Set the Number of Intervals for Slider</h3>
+<pre><code class="language-cpp">class void setSliderNumIntervals(value)
+</code></pre>
+<p>This function sets the number of intervals (or number of steps) the slider widget has.
+<code>value</code> is an <code>Integer</code></p>
+<h5 id="example_30">Example</h5>
+<pre><code class="language-cpp">widget1.setSliderNumIntervals(100);
+</code></pre>
+<h3 id="get-slider-value">Get Slider Value</h3>
+<pre><code class="language-cpp">class int getSliderValue()
+class float getSliderValue()
+</code></pre>
+<p>This function is to get the value of the slider from the app. The function will return an <code>Integer</code> or a <code>Float</code></p>
+<h5 id="example_31">Example</h5>
+<pre><code class="language-cpp">sliderValue = widget1.getSliderValue();
+</code></pre>
+<h2 id="button-widget-specific-functions">Button Widget Specific Functions</h2>
+<p><strong>The widgets <code>Button</code>,<code>Circle Button</code>,<code>Date</code> and <code>Time</code> widgets use the functions below</strong></p>
+<h3 id="ispressed">isPressed</h3>
+<pre><code class="language-cpp">class int isPressed()
+</code></pre>
+<p>This function is used to check if a button widget has been pressed. This function returns the number of times the button has been pressed and a <code>0</code> if the button is not pressed</p>
+<h5 id="example_32">Example</h5>
+<pre><code class="language-cpp">if(widget1.isPressed() &gt; 0)
+{
+...........................
+}
+or
+int buttonPressed = widget1.isPressed();
+</code></pre>
+<h3 id="acknowledgement">Acknowledgement</h3>
+<pre><code class="language-cpp">class void ack()
+</code></pre>
+<p>This function will send an acknowledgement packet to the connected device. This is required when the input mode of the button widget has been set to acknowledgement</p>
+<h5 id="example_33">Example</h5>
+<pre><code class="language-cpp">widget1.ack();
+</code></pre>
+<h2 id="keyboard-widget-specific-functions">Keyboard Widget Specific Functions</h2>
+<h3 id="get-keyboard-message">Get Keyboard Message</h3>
+<pre><code class="language-cpp">class void getKeyboardMessage(*appReply)
+</code></pre>
+<p>This function is to get the reply when the Keyboard Widget is used. The function will store the reply in the <code>appReply</code> as a <code>Character Array</code></p>
+<h5 id="example_34">Example</h5>
+<pre><code class="language-cpp">widget1.getKeyboardMessage(&amp;getReply);
+</code></pre>
+<h2 id="date-widget-specific-functions">Date Widget Specific Functions</h2>
+<h3 id="set-default-date">Set Default Date</h3>
+<pre><code class="language-cpp">class void setDefaultDate(day, month, year)
+</code></pre>
+<p>This function sets the default day when the date widget is used. When the user taps on the widget, a calendar is presented and the cursor will highlight the default day.<br/>
+Both <code>day</code> and <code>year</code> are <code>Integer</code> while <code>month</code> can accept <code>Integer</code> and months in macro. The available macros are <br/></p>
+<ul>
+<li><code>Jan</code></li>
+<li><code>Feb</code></li>
+<li><code>Mar</code></li>
+<li><code>Apr</code></li>
+<li><code>May</code></li>
+<li><code>Jun</code></li>
+<li><code>Jul</code></li>
+<li><code>Aug</code></li>
+<li><code>Sep</code></li>
+<li><code>Oct</code></li>
+<li><code>Nov</code></li>
+<li><code>Dec</code></li>
+</ul>
+<h5 id="example_35">Example</h5>
+<pre><code class="language-cpp">widget1.setDefaultDate(07,Feb,2016);
+</code></pre>
+<h3 id="get-date">Get Date</h3>
+<pre><code class="language-cpp">class void getDateInput(*day,*month,*year)
+</code></pre>
+<p>This function is used to get the date input from the Date widget. The values will be stored accordingly into <code>day</code>,<code>month</code> and <code>year</code></p>
+<h5 id="example_36">Example</h5>
+<pre><code class="language-cpp">widget1.getDateInput(&amp;day,&amp;month,&amp;year);
+</code></pre>
+<h2 id="time-widget-specific-functions">Time Widget Specific Functions</h2>
+<h3 id="set-default-time">Set Default Time</h3>
+<pre><code class="language-cpp">class void setDefaultTime(hour,minute,second)
+</code></pre>
+<p>This function sets the default time when the Time widget is used. When the user taps on the widget, a pop up on the app will show the default time.</p>
+<h5 id="example_37">Example</h5>
+<pre><code class="language-cpp">widget1.setDefaultTime(05,30,00);
+</code></pre>
+<h3 id="get-time">Get Time</h3>
+<pre><code class="language-cpp">class void getTimeInput(hour,minute,second)
+</code></pre>
+<p>This function is used to get the time input from the Time widget. The values will be stored accordingly into <code>hour</code>,<code>minute</code>,<code>second</code></p>
+<pre><code class="language-cpp">widget1.getTimeInput(&amp;hour,&amp;minute,&amp;second);
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../Examples/" class="btn btn-neutral float-left" title="Examples"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../Examples/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

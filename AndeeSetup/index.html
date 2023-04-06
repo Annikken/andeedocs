@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>First Time Setup - Andee Documentation</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "First Time Setup";
+        var mkdocs_page_input_path = "AndeeSetup.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Andee Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../AnnikkenProducts/">Andee Products</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">First Time Setup</a>
+    <ul class="current">
+    </ul>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Andee U/iOS/Android Shield</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../BeforeYouCode/">Before You Code</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Examples/">Examples</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../AndeeAPI/">Andee API</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Andee Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>First Time Setup</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="getting-started">Getting Started</h1>
+<p>This section will guide you in setting up your new Annikken Andee shield for your Arduino projects.</p>
+<p>If you have just gotten your Annikken Andee shield, go through each step to ensure a smooth setup or you can skip to the relevant topic if you already have completed some of it.</p>
+<p>If you come across any issues, please check our <a href="https://annikken.com/support">support</a> page for your relevant product. If the solution is not available there, feel free to <a href="https://annikken.com/about-us#contact-us">contact us</a>.</p>
+<h1 id="annikken-andee-shield-setup">Annikken Andee Shield Setup</h1>
+<h2 id="installing-arduino-ide">Installing Arduino IDE</h2>
+<p>Coding for Arduino and Annikken Andee is done using the Arduino Integrated Development Environment(IDE). Before you proceed, you should ensure that you have the Arduino IDE installed on your computer.</p>
+<p>If the Arduino IDE is not installed, proceed to download the Arduino IDE at https://www.arduino.cc/en/Main/Software. Be sure to get the latest version.</p>
+<h2 id="installing-annikken-andee-library">Installing Annikken Andee Library</h2>
+<p>The Annikken Andee Library can be easily installed by using Arduino IDE's built-in library manager. Follow these steps to install the Andee Library.</p>
+<ol>
+<li>
+<p>In your Arduino IDE, select Sketch &gt;&gt; Include Library &gt;&gt; Manage Libraries.<br>
+    <img alt="" src="/img/install-andee-step-1.png" /></p>
+</li>
+<li>
+<p>Filter the library search by typing "andee" into the search box in the top right corner.<br>
+    <img alt="" src="/img/install-andee-step-2.png" /></p>
+</li>
+<li>
+<p>Select the latest version from the drop down menu and hit install.<br>
+    <img alt="" src="/img/install-andee-step-3.png" /></p>
+</li>
+</ol>
+<h2 id="installing-annikken-andee-firmware">Installing Annikken Andee Firmware</h2>
+<p>Annikken regularly releases new firmware updates for the Andee U, iOS and Android. It is recommended that you update the firmware on your shield when a new update is released. To do so, you require the following items:</p>
+<ul>
+<li>1x Micro SD Card.</li>
+<li>1x Micro SD Card Reader/Writer (or a computer capable of reading/writing Micro SD Cards).</li>
+<li>1x Arduino Board.</li>
+<li>1x Annikken Andee U/iOS/Android shield.</li>
+</ul>
+<h4 id="andee-uandroid">Andee U/Android</h4>
+<p>This section provides instructions for firmware installation/upgrade for Annikken Andee U and Andee Android shields. Please follow the steps:</p>
+<ol>
+<li>
+<p>Download the latest firmware for your Andee shield listed below.</p>
+<ul>
+<li><a href="https://www.annikken.com/support/andee-u">Andee U</a></li>
+<li><a href="https://www.annikken.com/support/andee-android">Andee Android</a></li>
+</ul>
+</li>
+<li>
+<p>Extract the zip file and copy "image.hex" into your Micro SD card.</p>
+</li>
+<li>
+<p>Connect the Annikken Andee to the Arduino and power it up. You should see an LED blinking. The Andee is in "Normal Mode".</p>
+</li>
+<li>
+<p>We will now need to put the Andee into "Update Mode". Press and hold down the "BOOT" and "ANDEE RESET" buttons together. Don’t let go of them yet!</p>
+</li>
+<li>
+<p>While still holding down the "BOOT" button, release the "ANDEE RESET" button.</p>
+</li>
+<li>
+<p>Now let go of the "BOOT" button. You should see that "CONN" and "STATUS" LEDS are now flashing together.</p>
+</li>
+<li>
+<p>Insert the Micro SD card containing "image.hex" you loaded earlier into the Annikken Andee's SD card slot. Annikken Andee will automatically start updating. The LEDs will flash red and green consecutively. Do not power down the shield at this time.</p>
+</li>
+<li>
+<p>Once the update/installation has completed, the "CONN" and "STATUS" LEDs will start to blink green again.</p>
+</li>
+</ol>
+<p>You're done! Your Annikken Andee Shield is now updated with the latest firmware!</p>
+<h4 id="andee-ios">Andee iOS</h4>
+<p>This section provides instructions for firmware installation/upgrade for Annikken Andee iOS shields. Please follow the steps:</p>
+<ol>
+<li>
+<p>Download the latest firmware for Andee iOS <a href="https://www.annikken.com/support/andee-ios">here</a>.</p>
+</li>
+<li>
+<p>Extract the zip file and copy "image.hex" into your Micro SD card.</p>
+</li>
+<li>
+<p>Connect the Annikken Andee to the Arduino and power it up. You should see an LED blinking. The Andee is in "Normal Mode".</p>
+</li>
+<li>
+<p>We will now need to put the Andee into "Update Mode". Press and hold down the "BTN_0" and "BTN_1" buttons together. Don’t let go of them yet!</p>
+</li>
+<li>
+<p>While still holding down the "BTN_1" button, release the "BTN_0" button.</p>
+</li>
+<li>
+<p>Now let go of the "BTN_1" button. You should see that "CONN" and "STATUS" LEDS are now flashing together.</p>
+</li>
+<li>
+<p>Insert Micro SD card containing "image.hex" you loaded earlier into the Annikken Andee's SD card slot. Annikken Andee will automatically start updating. The LEDs will flash red and green consecutively. Do not power down the shield at this time.</p>
+</li>
+<li>
+<p>Once the update/installation has completed, the "CONN" and "STATUS" LEDs will start to blink green again.</p>
+</li>
+</ol>
+<p>You're done! Your Annikken Andee iOS shield is now updated with the latest firmware!</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../AnnikkenProducts/" class="btn btn-neutral float-left" title="Andee Products"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../BeforeYouCode/" class="btn btn-neutral float-right" title="Before You Code">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../AnnikkenProducts/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../BeforeYouCode/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

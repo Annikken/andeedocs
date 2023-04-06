@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Examples - Andee Documentation</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Examples";
+        var mkdocs_page_input_path = "Examples.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Andee Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../AnnikkenProducts/">Andee Products</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../AndeeSetup/">First Time Setup</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Andee U/iOS/Android Shield</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../BeforeYouCode/">Before You Code</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Examples</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#creating-widgets">Creating Widgets</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#creating-buttons">Creating Buttons</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#creating-input-buttons">Creating Input Buttons</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#creating-analog-dials">Creating Analog Dials</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#creating-sliders">Creating Sliders</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#updating-the-widget">Updating The Widget</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#receiving-data">Receiving Data</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../AndeeAPI/">Andee API</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Andee Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Andee U/iOS/Android Shield &raquo;</li>
+      <li>Examples</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="examples">Examples</h1>
+<p>This section provides examples for your Andee shield. You can jump to the example that best suits your needs.</p>
+<h2 id="creating-widgets">Creating Widgets</h2>
+<p>To create a new widget, you will need to instantiate a new instance of the AndeeHelper class as follows. The ideal place to place this would be just below your #includes declaration in your Arduino sketch.</p>
+<pre><code class="language-cpp">AndeeHelper widget1;
+</code></pre>
+<p>When creating a new widget, the most important properties that you need to set are:</p>
+<ol>
+<li><strong>Unique ID</strong></li>
+<li><strong>Screen location</strong></li>
+<li><strong>Type</strong></li>
+<li><strong>Colors</strong></li>
+<li><strong>Display data</strong></li>
+</ol>
+<p>Lets go through each of these properties.</p>
+<ol>
+<li><strong>Unique ID</strong>
+To set the id:</li>
+</ol>
+<pre><code class="language-cpp">widget1.setId(0);
+widget2.setId(1);
+</code></pre>
+<p><strong>Note:</strong> The integer id for each widget should be unique and different. Declaring a widget as the same id as another will cause the latest widget to override the other.</p>
+<ol>
+<li><strong>Screen Location</strong>
+You can set the location of your widget by one of two methods:</li>
+<li>A row and column based system.
+  The mobile devices is divided into 4 rows and 4 columns.</li>
+</ol>
+<pre><code class="language-cpp">widget1.setLocation(1, 2, ONE_THIRD);
+</code></pre>
+<p>For an in depth explanation on setLocation(), refer to this <a href="../AndeeAPI/#set-location">documentation</a></p>
+<ul>
+<li>Cartesian based system.
+  This system is based on x and y coordinate with its origin at the top left corner, along with its height and width. </li>
+</ul>
+<pre><code class="language-cpp">widget1.setCoord(25, 25, 50, 25);
+</code></pre>
+<p>For an in depth explanation on setCoord() refer to this <a href="../AndeeAPI/#set-coordinates">documentation</a></p>
+<ol>
+<li><strong>Type</strong>
+The Andee library provides a few different types of UI. To see how the widgets look like, refer to <a href="https://annikken.com/andee-u">Andee U/iOS</a> or <a href="https://annikken.com/andee-android">Andee Android</a>.</li>
+</ol>
+<pre><code class="language-cpp">widget1.setType(DATA_OUT);
+</code></pre>
+<p>For an in depth explanation on setType() and options for type, refer to this <a href="../AndeeAPI/#set-type">documentation</a></p>
+<ol>
+<li><strong>Colors</strong>
+Every component of the widget can be customised by color.
+To set the color of the titles.</li>
+</ol>
+<pre><code class="language-cpp">widget1.setTitleTextColor(&quot;FFAEDE94&quot;);
+</code></pre>
+<p>To set the background color for title region.</p>
+<pre><code class="language-cpp">widget1.setTitleColor(&quot;FFFFDAAA&quot;);
+</code></pre>
+<p>To set body text color.</p>
+<pre><code class="language-cpp">widget1.setTextColor(&quot;FFFFDAAA&quot;);
+</code></pre>
+<p>To set body background color.</p>
+<pre><code class="language-cpp">widget1.setColor(&quot;FF6D92A0&quot;);
+</code></pre>
+<p>For an in depth explanation to set colours and predefined colors, refer to this <a href="../AndeeAPI/#set-color">documentation</a></p>
+<ol>
+<li><strong>Display Data</strong>
+To display text or data. We use the following methods.</li>
+</ol>
+<pre><code class="language-cpp">widget1.setTitle(&quot;Sensor A103&quot;);
+widget1.setData(&quot;No readings received.&quot;);
+widget1.setUnits(&quot;cm&quot;);
+</code></pre>
+<p>Now lets combine what we have shown into a single code snippet.</p>
+<pre><code class="language-cpp">void setup() {
+    Andee.begin();
+
+    widget1.setId(0);
+    widget1.setCoord(25, 25, 50, 25);
+    widget1.setType(DATA_OUT);
+    widget1.setTitleTextColor(&quot;FFAEDE94&quot;);
+    widget1.setTitleColor(&quot;FFFFDAAA&quot;);
+    widget1.setTextColor(&quot;FF9A73A9&quot;);
+    widget1.setColor(&quot;FF6D92A0&quot;);
+    widget1.setTitle(&quot;Sensor A103&quot;);
+    widget1.setData(&quot;No readings received.&quot;);
+    widget1.setUnits(&quot;cm&quot;);
+}
+</code></pre>
+<p>Certain types of widgets require extra methods for setup. They will be discussed below.</p>
+<h3 id="creating-buttons">Creating Buttons</h3>
+<p>Buttons have 2 modes. A single press mode which waits for a response from the Andee shield and a multipress mode that can be press continuously.</p>
+<p>The button defaults to single press when instantiated. To set the button as multi press mode. Use the following code.</p>
+<pre><code class="language-cpp">button.setInputMode(ACK);
+</code></pre>
+<h3 id="creating-input-buttons">Creating Input Buttons</h3>
+<p>Input buttons consists of the following:</p>
+<ul>
+<li>Keyboard Input Button</li>
+<li>Time Input Button</li>
+<li>Date Input Button</li>
+</ul>
+<p><strong>Keyboard Input Button</strong></p>
+<p>Keyboard input can activate different keyboard modes: <code>KEYBOARD_IN</code>, <code>ALPHA_NUMERIC</code>, <code>ALPHA_NUMERIC_PW</code>, <code>NUMERIC</code>, <code>NUMERIC_PW</code>.
+You can set the modes with the code below.</p>
+<pre><code class="language-cpp">keyboardWidget.setInputMode(KEYBOARD_IN);
+</code></pre>
+<p><strong>Time Input Button</strong></p>
+<p>You can set a initial time to display for this widget.</p>
+<pre><code class="language-cpp">timeWidget.setDefaultTime(05,30,00);
+</code></pre>
+<p><strong>Date Input Button</strong></p>
+<p>You can set a initial date to display for this widget.</p>
+<pre><code class="language-cpp">dateWidget.setDefaultDate(25, DEC, 2013);
+</code></pre>
+<h3 id="creating-analog-dials">Creating Analog Dials</h3>
+<p>Setting the colors for Analog Dials uses a different set methods compared to other widgets. To set the colours, use the code below.</p>
+<pre><code class="language-cpp">analogDial.setBaseColor(LIME_GREEN);
+analogDial.setActiveColor(GREEN);
+</code></pre>
+<p>You also have to set the minimum and maximum value of the dial.</p>
+<pre><code class="language-cpp">analogDial.setMinMax(0, 100);
+</code></pre>
+<h3 id="creating-sliders">Creating Sliders</h3>
+<p>Sliders require a number of methods to get going.
+To set the slider's minimum and maximum values.</p>
+<pre><code class="language-cpp">slider.setSliderMinMax(0, 255, 0);
+</code></pre>
+<p>To set the initial value.</p>
+<pre><code class="language-cpp">slider.moveSliderToValue(100);
+</code></pre>
+<p>To set the incremental intervals for each increase in value.</p>
+<pre><code class="language-cpp">slider.setSliderNumIntervals(256);
+</code></pre>
+<p>The slider have 2 modes in which it can operate: <code>ON_VALUE_CHANGE</code> AND <code>ON_FINGER_UP</code>.
+<code>ON_VALUE_CHANGE</code> means that the shield is updated immediately with new data when the slider is moved.
+<code>ON_FINGER_UP</code> means that the shield will only be updated when the finger is lifted up from the screen after dragging the slider.
+To set the mode.</p>
+<pre><code class="language-cpp">slider.setSliderReportMode(ON_VALUE_CHANGE);
+</code></pre>
+<p>Setting the colors for sliders uses a different set methods compared to other widgets. To set the colours, use the code below.</p>
+<pre><code class="language-cpp">slider.setActiveColor(BLUE);
+slider.setBaseColor(DARK_BLUE);
+</code></pre>
+<h2 id="updating-the-widget">Updating The Widget</h2>
+<p>Sending data to your mobile device requires setting new content for your widget and updating it.
+By setting new content, you can change text colors, background colors and text. </p>
+<p>For example, first you can change body color and data text.</p>
+<pre><code class="language-cpp">widget1.setData(&quot;New incoming data&quot;);
+widget1.setColor(&quot;FF6D92A0&quot;);
+</code></pre>
+<p>Next, to update the widget.</p>
+<pre><code class="language-cpp">widget1.update();
+</code></pre>
+<p><strong>Note</strong>: <code>update()</code> is a resource intensive process. It is recommend to only update a widget if it is needed</p>
+<h2 id="receiving-data">Receiving Data</h2>
+<p>Widgets such as button, slider, button inputs take inputs from your mobile devices. To process this inputs on your Arduino, we need to receive that data.</p>
+<p><strong>Button</strong>
+You can check if button has been pressed by using <code>isPressed()</code>.</p>
+<pre><code class="language-cpp">if (button.isPressed()) {
+    // turn on lights
+}
+</code></pre>
+<p>You also can check the number of times the button has been pressed in a short duration</p>
+<pre><code class="language-cpp">if (button.isPressed() &gt;= 2) {
+    // turn on hall lights
+} else {
+    // turn on kitchen lights
+}
+</code></pre>
+<p><strong>Slider</strong>
+To get the slider value</p>
+<pre><code class="language-cpp">int sliderIntValue = 0;
+sliderInt.getSliderValue(&amp;sliderIntValue,INT);
+
+float sliderFltValue = 0; 
+sliderFloat.getSliderValue(&amp;sliderFltValue ,FLOAT);
+</code></pre>
+<p><strong>Keyboard Input Button</strong>
+First, we need to declare an array of characters to store data in memory.</p>
+<pre><code class="language-cpp">char userInput[32];
+</code></pre>
+<p>Next, we have to clear the memory from any data previously stored inside.</p>
+<pre><code class="language-cpp">memset(userInput, 0x00, 32);
+</code></pre>
+<p>Finally, we will get the data and store it inside userInput.</p>
+<pre><code class="language-cpp">textInputButton.getKeyboardMessage(userInput);
+</code></pre>
+<p><strong>Time Input Button</strong>
+First, we need to declare an array of characters to store data in memory and variables to store integers.</p>
+<pre><code class="language-cpp">int hh, mm, ss;
+char tempStringTime[20];
+</code></pre>
+<p>Next, we will extract the hour, minute and seconds data into the <code>int</code> variables.</p>
+<pre><code class="language-cpp">timeInputButton.getTimeInput(&amp;hh, &amp;mm, &amp;ss);
+</code></pre>
+<p>Lastly, we can combine the data into a string as declared before.</p>
+<pre><code class="language-cpp">sprintf(tempString, &quot;%02d:%02d:%02d&quot;, hh, mm, ss);
+</code></pre>
+<p><strong>Date Input Button</strong>
+First, we need to declare an array of characters to store data in memory and variables to store integers.</p>
+<pre><code class="language-cpp">int dd, mm, yyyy;
+char tempStringDate[20];
+</code></pre>
+<p>Next, we will extract the hour, minute and seconds data into the <code>int</code> variables.</p>
+<pre><code class="language-cpp">timeInputButton.getTimeInput(&amp;dd, &amp;mm, &amp;yyyy);
+</code></pre>
+<p>Lastly, we can combine the data into a string as declared before.</p>
+<pre><code class="language-cpp">sprintf(tempString, &quot;%02d/%02d/%02d&quot;, dd, mm, yyyy);
+</code></pre>
+<p><br></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../BeforeYouCode/" class="btn btn-neutral float-left" title="Before You Code"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../AndeeAPI/" class="btn btn-neutral float-right" title="Andee API">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../BeforeYouCode/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../AndeeAPI/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
