@@ -10,21 +10,24 @@ If you come across any issues, please check our [support](https://annikken.com/s
 
 Coding for Arduino and Annikken Andee is done using the Arduino Integrated Development Environment(IDE). Before you proceed, you should ensure that you have the Arduino IDE installed on your computer.
 
-If the Arduino IDE is not installed, proceed to download the Arduino IDE at [Arduino]https://www.arduino.cc/en/Main/Software. Be sure to get the latest version.
+If the Arduino IDE is not installed, proceed to download the Arduino IDE at [Arduino](https://www.arduino.cc/en/Main/Software). Just get the latest version.
 
 
 ## Installing Andee Library
 
 The Annikken Andee Library can be easily installed by using Arduino IDE's built-in library manager. Follow these steps to install the Andee Library.
 
-1. In your Arduino IDE, select Sketch >> Include Library >> Manage Libraries.<br>
-    ![](/img/install-andee-step-1.png)
+1. In your Arduino IDE, select Sketch >> Include Library >> Manage Libraries. <br>
 
-2. Filter the library search by typing "andee" into the search box in the top right corner.<br>
-    ![](/img/install-andee-step-2.png)
+![](img/install-andee-step-1.png)
+
+2. Filter the library search by typing "andee" into the search box in the top right corner. <br>
+
+![](img/install-andee-step-2.png)
     
-3. Select the latest version from the drop down menu and hit install.<br>
-    ![](/img/install-andee-step-3.png)
+3. Select the latest version from the drop down menu and hit install. <br>
+
+![](img/install-andee-step-3.png)
 
 
 ## Installing Andee Firmware
@@ -50,13 +53,25 @@ This section provides instructions for firmware installation/upgrade for Annikke
 
 4. We will now need to put the Andee into "Update Mode". Press and hold down the "BOOT" and "ANDEE RESET" buttons together. Don’t let go of them yet!
 
-5. While still holding down the "BOOT" button, release the "ANDEE RESET" button.
+![](img/A2.jpg)
 
-6. Now let go of the "BOOT" button. You should see that "CONN" and "STATUS" LEDS are now flashing together.
+![](img/U2.jpg)
+
+5. While still holding down the "BOOT" button, release the "ANDEE RESET" button. You should see that "CONN" and "STATUS" LEDS are now flashing RED together.
+
+6. Now let go of the "BOOT" button. 
+
+![](img/A3.jpg)
+
+![](img/U3.jpg)
 
 7. Insert the Micro SD card containing "image.hex" you loaded earlier into the Annikken Andee's SD card slot. Annikken Andee will automatically start updating. The LEDs will flash red and green consecutively. Do not power down the shield at this time.
 
 8. Once the update/installation has completed, the "CONN" and "STATUS" LEDs will start to blink green again.
+
+![](img/A1.jpg)
+
+![](img/U1.jpg)
 
 
 You're done! Your Annikken Andee Shield is now updated with the latest firmware!
@@ -74,14 +89,19 @@ This section provides instructions for firmware installation/upgrade for Annikke
 
 4. We will now need to put the Andee into "Update Mode". Press and hold down the "BTN_0" and "BTN_1" buttons together. Don’t let go of them yet!
 
-5. While still holding down the "BTN_1" button, release the "BTN_0" button.
+![](img/I2.jpg)
 
-6. Now let go of the "BTN_1" button. You should see that "CONN" and "STATUS" LEDS are now flashing together.
+5. While still holding down the "BTN_1" button, release the "BTN_0" button. You should see that "CONN" and "STATUS" LEDS are now flashing RED together.
+
+6. Now let go of the "BTN_1" button. 
+
+![](img/I3.jpg)
 
 7. Insert Micro SD card containing "image.hex" you loaded earlier into the Annikken Andee's SD card slot. Annikken Andee will automatically start updating. The LEDs will flash red and green consecutively. Do not power down the shield at this time.
 
 8. Once the update/installation has completed, the "CONN" and "STATUS" LEDs will start to blink green again.
 
+![](img/I1.jpg)
 
 You're done! Your Annikken Andee iOS shield is now updated with the latest firmware!
 
