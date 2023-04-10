@@ -6,16 +6,14 @@ If you have just gotten your Annikken Andee shield, go through each step to ensu
 
 If you come across any issues, please check our [support](https://annikken.com/support) page for your relevant product. If the solution is not available there, feel free to [contact us](https://annikken.com/about-us#contact-us).
 
-# Annikken Andee Shield Setup
-
 ## Installing Arduino IDE
 
 Coding for Arduino and Annikken Andee is done using the Arduino Integrated Development Environment(IDE). Before you proceed, you should ensure that you have the Arduino IDE installed on your computer.
 
-If the Arduino IDE is not installed, proceed to download the Arduino IDE at https://www.arduino.cc/en/Main/Software. Be sure to get the latest version.
+If the Arduino IDE is not installed, proceed to download the Arduino IDE at [Arduino]https://www.arduino.cc/en/Main/Software. Be sure to get the latest version.
 
 
-## Installing Annikken Andee Library
+## Installing Andee Library
 
 The Annikken Andee Library can be easily installed by using Arduino IDE's built-in library manager. Follow these steps to install the Andee Library.
 
@@ -29,7 +27,7 @@ The Annikken Andee Library can be easily installed by using Arduino IDE's built-
     ![](/img/install-andee-step-3.png)
 
 
-## Installing Annikken Andee Firmware
+## Installing Andee Firmware
 
 Annikken regularly releases new firmware updates for the Andee U, iOS and Android. It is recommended that you update the firmware on your shield when a new update is released. To do so, you require the following items:
 
@@ -38,7 +36,7 @@ Annikken regularly releases new firmware updates for the Andee U, iOS and Androi
 * 1x Arduino Board.
 * 1x Annikken Andee U/iOS/Android shield.
 
-#### Andee U/Android
+### Andee U/Android
 
 This section provides instructions for firmware installation/upgrade for Annikken Andee U and Andee Android shields. Please follow the steps:
 
@@ -64,7 +62,7 @@ This section provides instructions for firmware installation/upgrade for Annikke
 You're done! Your Annikken Andee Shield is now updated with the latest firmware!
 
 
-#### Andee iOS
+### Andee iOS
 
 This section provides instructions for firmware installation/upgrade for Annikken Andee iOS shields. Please follow the steps:
 
