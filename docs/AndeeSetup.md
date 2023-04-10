@@ -43,9 +43,9 @@ Annikken regularly releases new firmware updates for the Andee U, iOS and Androi
 
 This section provides instructions for firmware installation/upgrade for Annikken Andee U and Andee Android shields. Please follow the steps:
 
-1. Download the latest firmware for your Andee shield listed below.
-    * [Andee U](https://www.annikken.com/support/andee-u)
-    * [Andee Android](https://www.annikken.com/support/andee-android)
+1. Download the latest firmware for your Andee shield listed below if you have not done so.
+    * [Andee U](https://github.com/Annikken/annikken.github.io/raw/main/AndeeU%26iOS3.1.0.zip)
+    * [Andee Android](https://github.com/Annikken/annikken.github.io/raw/main/Android3.1.0.zip)
 
 2. Extract the zip file and copy "image.hex" into your Micro SD card.
 
@@ -81,7 +81,7 @@ You're done! Your Annikken Andee Shield is now updated with the latest firmware!
 
 This section provides instructions for firmware installation/upgrade for Annikken Andee iOS shields. Please follow the steps:
 
-1. Download the latest firmware for Andee iOS [here](https://www.annikken.com/support/andee-ios).
+1. Download the latest firmware for Andee iOS [here](https://github.com/Annikken/annikken.github.io/raw/main/AndeeU%26iOS3.1.0.zip) if you have not done so.
 
 2. Extract the zip file and copy "image.hex" into your Micro SD card.
 
