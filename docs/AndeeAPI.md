@@ -249,21 +249,6 @@ Andee.gpsStop();
 ```
 
 
-
-### SMS
-```cpp
-class void sendSMS(phone_number, message)
-```
-This function will send an SMS through the connected device. <br/>
-`phone_number`, is a `Character Array`, will be the recipient's phone number<br/>
-`message`, is a `Character Array`, will be the content of the SMS
-##### Example
-```cpp
-Andee.sendSMS(98452618, "Hello from my Andee");
-```
-
-
-
 ### Taking Photos
 ```cpp
 class void takePhoto(cameraType,autoFocus,flash)

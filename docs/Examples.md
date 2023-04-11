@@ -21,84 +21,87 @@ When creating a new widget, the most important properties that you need to set a
 Lets go through each of these properties.
 
 1. **Unique ID**
-To set the id:
-```cpp
-widget1.setId(0);
-widget2.setId(1);
-```
-**Note:** The integer id for each widget should be unique and different. Declaring a widget as the same id as another will cause the latest widget to override the other.
+
+    To set the id:
+    
+        widget1.setId(0);
+        widget2.setId(1);
+        
+    **Note:** The integer id for each widget should be unique and different. Declaring a widget as the same id as another will cause the latest widget to override the other.
 
 2. **Screen Location**
-You can set the location of your widget by one of two methods:
-  * A row and column based system.
-  The mobile devices is divided into 4 rows and 4 columns.
-```cpp
-widget1.setLocation(1, 2, ONE_THIRD);
-```
-For an in depth explanation on setLocation(), refer to this [documentation](AndeeAPI.md#set-location)
+
+    You can set the location of your widget by one of two methods:
+
+    * A row and column based system.
+    
+    The mobile devices is divided into 4 rows and 4 columns.
+        
+        widget1.setLocation(1, 2, ONE_THIRD);
+        
+    For an in depth explanation on setLocation(), refer to this [documentation](AndeeAPI.md#set-location)
   
-  * Cartesian based system.
-  This system is based on x and y coordinate with its origin at the top left corner, along with its height and width. 
-```cpp
-widget1.setCoord(25, 25, 50, 25);
-```
-  For an in depth explanation on setCoord() refer to this [documentation](AndeeAPI.md#set-coordinates)
+    * Cartesian based system.
+    
+    This system is based on x and y coordinate with its origin at the top left corner, along with its height and width. 
+
+        widget1.setCoord(25, 25, 50, 25);
+
+    For an in depth explanation on setCoord() refer to this [documentation](AndeeAPI.md#set-coordinates)
 
 3. **Type**
-The Andee library provides a few different types of UI. To see how the widgets look like, refer to [Andee U/iOS](https://annikken.com/andee-u) or [Andee Android](https://annikken.com/andee-android).
-```cpp
-widget1.setType(DATA_OUT);
-```
-For an in depth explanation on setType() and options for type, refer to this [documentation](AndeeAPI.md#set-type)
+    The Andee library provides a few different types of UI for example data displays, sliders or buttons.
+
+        widget1.setType(DATA_OUT);
+
+    For an in depth explanation on setType() and options for type, refer to this [documentation](AndeeAPI.md#set-type)
 
 4. **Colors**
-Every component of the widget can be customised by color.
-To set the color of the titles.
-```cpp
-widget1.setTitleTextColor("FFAEDE94");
-```
-To set the background color for title region.
-```cpp
-widget1.setTitleColor("FFFFDAAA");
-```
-To set body text color.
-```cpp
-widget1.setTextColor("FFFFDAAA");
-```
-To set body background color.
-```cpp
-widget1.setColor("FF6D92A0");
-```
-For an in depth explanation to set colours and predefined colors, refer to this [documentation](AndeeAPI.md#set-color)
+
+    Every component of the widget can be customised by color.    
+    To set the color of the titles.
+
+        widget1.setTitleTextColor("FFAEDE94");
+
+    To set the background color for title region.
+
+        widget1.setTitleColor("FFFFDAAA");
+        
+    To set body text color.
+
+        widget1.setTextColor("FFFFDAAA");
+        
+    To set body background color.
+
+        widget1.setColor("FF6D92A0");
+
+    For an in depth explanation to set colours and predefined colors, refer to this [documentation](AndeeAPI.md#set-color)
 
 5. **Display Data**
-To display text or data. We use the following methods.
-```cpp
-widget1.setTitle("Sensor A103");
-widget1.setData("No readings received.");
-widget1.setUnits("cm");
-```
 
+    To display text or data. We use the following methods.
 
-Now lets combine what we have shown into a single code snippet.
-```cpp
-void setup() {
-    Andee.begin();
+        widget1.setTitle("Sensor A103");
+        widget1.setData("No readings received.");
+        widget1.setUnits("cm");
+
+    Now lets combine what we have shown into a single code snippet.
     
-    widget1.setId(0);
-    widget1.setCoord(25, 25, 50, 25);
-    widget1.setType(DATA_OUT);
-    widget1.setTitleTextColor("FFAEDE94");
-    widget1.setTitleColor("FFFFDAAA");
-    widget1.setTextColor("FF9A73A9");
-    widget1.setColor("FF6D92A0");
-    widget1.setTitle("Sensor A103");
-    widget1.setData("No readings received.");
-    widget1.setUnits("cm");
-}
-```
+        void setup() {
+        Andee.begin();        
+        widget1.setId(0);
+        widget1.setCoord(25, 25, 50, 25);
+        widget1.setType(DATA_OUT);
+        widget1.setTitleTextColor("FFAEDE94");
+        widget1.setTitleColor("FFFFDAAA");
+        widget1.setTextColor("FF9A73A9");
+        widget1.setColor("FF6D92A0");
+        widget1.setTitle("Sensor A103");
+        widget1.setData("No readings received.");
+        widget1.setUnits("cm");
+        }
 
-Certain types of widgets require extra methods for setup. They will be discussed below.
+    Certain types of widgets require extra methods for setup. They will be discussed below.
 
 ### Creating Buttons
 Buttons have 2 modes. A single press mode which waits for a response from the Andee shield and a multipress mode that can be press continuously.
