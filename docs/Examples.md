@@ -269,6 +269,8 @@ sprintf(tempString, "%02d/%02d/%02d", dd, mm, yyyy);
 
 <br>
 
+For full examples, you can refer to our built in examples in your Arduino IDE. Go to ```File``` -> ```Examples``` -> ```Andee``` for Andee U/iOS/Android
+
 
 
 

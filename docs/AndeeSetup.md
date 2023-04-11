@@ -4,13 +4,13 @@ This section will guide you in setting up your new Annikken Andee shield for you
 
 If you have just gotten your Annikken Andee shield, go through each step to ensure a smooth setup or you can skip to the relevant topic if you already have completed some of it.
 
-If you come across any issues, please check our [support](https://annikken.com/support) page for your relevant product. If the solution is not available there, feel free to [contact us](https://annikken.com/about-us#contact-us).
+If you come across any issues, please check our [support](https://annikken.github.io/) page for your relevant product. If the solution is not available there, feel free to [contact us](mailto:andee@annikken.com).
 
 ## Installing Arduino IDE
 
 Coding for Arduino and Annikken Andee is done using the Arduino Integrated Development Environment(IDE). Before you proceed, you should ensure that you have the Arduino IDE installed on your computer.
 
-If the Arduino IDE is not installed, proceed to download the Arduino IDE at [Arduino](https://www.arduino.cc/en/Main/Software). Just get the latest version.
+If the Arduino IDE is not installed, proceed to download the Arduino IDE at [Arduino](https://www.arduino.cc/en/software). Just get the latest version.
 
 
 ## Installing Andee Library
