@@ -119,78 +119,81 @@
 </ol>
 <p>Lets go through each of these properties.</p>
 <ol>
-<li><strong>Unique ID</strong>
-To set the id:</li>
-</ol>
-<pre><code class="language-cpp">widget1.setId(0);
+<li>
+<p><strong>Unique ID</strong></p>
+<p>To set the id:</p>
+<pre><code>widget1.setId(0);
 widget2.setId(1);
 </code></pre>
 <p><strong>Note:</strong> The integer id for each widget should be unique and different. Declaring a widget as the same id as another will cause the latest widget to override the other.</p>
-<ol>
-<li><strong>Screen Location</strong>
-You can set the location of your widget by one of two methods:</li>
-<li>A row and column based system.
-  The mobile devices is divided into 4 rows and 4 columns.</li>
-</ol>
-<pre><code class="language-cpp">widget1.setLocation(1, 2, ONE_THIRD);
+</li>
+<li>
+<p><strong>Screen Location</strong></p>
+<p>You can set the location of your widget by one of two methods:</p>
+<ul>
+<li>A row and column based system.</li>
+</ul>
+<p>The mobile devices is divided into 4 rows and 4 columns.</p>
+<pre><code>widget1.setLocation(1, 2, ONE_THIRD);
 </code></pre>
 <p>For an in depth explanation on setLocation(), refer to this <a href="../AndeeAPI/#set-location">documentation</a></p>
 <ul>
-<li>Cartesian based system.
-  This system is based on x and y coordinate with its origin at the top left corner, along with its height and width. </li>
+<li>Cartesian based system.</li>
 </ul>
-<pre><code class="language-cpp">widget1.setCoord(25, 25, 50, 25);
+<p>This system is based on x and y coordinate with its origin at the top left corner, along with its height and width. </p>
+<pre><code>widget1.setCoord(25, 25, 50, 25);
 </code></pre>
 <p>For an in depth explanation on setCoord() refer to this <a href="../AndeeAPI/#set-coordinates">documentation</a></p>
-<ol>
-<li><strong>Type</strong>
-The Andee library provides a few different types of UI. To see how the widgets look like, refer to <a href="https://annikken.com/andee-u">Andee U/iOS</a> or <a href="https://annikken.com/andee-android">Andee Android</a>.</li>
-</ol>
-<pre><code class="language-cpp">widget1.setType(DATA_OUT);
+</li>
+<li>
+<p><strong>Type</strong>
+    The Andee library provides a few different types of UI for example data displays, sliders or buttons.</p>
+<pre><code>widget1.setType(DATA_OUT);
 </code></pre>
 <p>For an in depth explanation on setType() and options for type, refer to this <a href="../AndeeAPI/#set-type">documentation</a></p>
-<ol>
-<li><strong>Colors</strong>
-Every component of the widget can be customised by color.
-To set the color of the titles.</li>
-</ol>
-<pre><code class="language-cpp">widget1.setTitleTextColor(&quot;FFAEDE94&quot;);
+</li>
+<li>
+<p><strong>Colors</strong></p>
+<p>Every component of the widget can be customised by color.  <br />
+To set the color of the titles.</p>
+<pre><code>widget1.setTitleTextColor("FFAEDE94");
 </code></pre>
 <p>To set the background color for title region.</p>
-<pre><code class="language-cpp">widget1.setTitleColor(&quot;FFFFDAAA&quot;);
+<pre><code>widget1.setTitleColor("FFFFDAAA");
 </code></pre>
 <p>To set body text color.</p>
-<pre><code class="language-cpp">widget1.setTextColor(&quot;FFFFDAAA&quot;);
+<pre><code>widget1.setTextColor("FFFFDAAA");
 </code></pre>
 <p>To set body background color.</p>
-<pre><code class="language-cpp">widget1.setColor(&quot;FF6D92A0&quot;);
+<pre><code>widget1.setColor("FF6D92A0");
 </code></pre>
 <p>For an in depth explanation to set colours and predefined colors, refer to this <a href="../AndeeAPI/#set-color">documentation</a></p>
-<ol>
-<li><strong>Display Data</strong>
-To display text or data. We use the following methods.</li>
-</ol>
-<pre><code class="language-cpp">widget1.setTitle(&quot;Sensor A103&quot;);
-widget1.setData(&quot;No readings received.&quot;);
-widget1.setUnits(&quot;cm&quot;);
+</li>
+<li>
+<p><strong>Display Data</strong></p>
+<p>To display text or data. We use the following methods.</p>
+<pre><code>widget1.setTitle("Sensor A103");
+widget1.setData("No readings received.");
+widget1.setUnits("cm");
 </code></pre>
 <p>Now lets combine what we have shown into a single code snippet.</p>
-<pre><code class="language-cpp">void setup() {
-    Andee.begin();
-
-    widget1.setId(0);
-    widget1.setCoord(25, 25, 50, 25);
-    widget1.setType(DATA_OUT);
-    widget1.setTitleTextColor(&quot;FFAEDE94&quot;);
-    widget1.setTitleColor(&quot;FFFFDAAA&quot;);
-    widget1.setTextColor(&quot;FF9A73A9&quot;);
-    widget1.setColor(&quot;FF6D92A0&quot;);
-    widget1.setTitle(&quot;Sensor A103&quot;);
-    widget1.setData(&quot;No readings received.&quot;);
-    widget1.setUnits(&quot;cm&quot;);
+<pre><code>void setup() {
+Andee.begin();        
+widget1.setId(0);
+widget1.setCoord(25, 25, 50, 25);
+widget1.setType(DATA_OUT);
+widget1.setTitleTextColor("FFAEDE94");
+widget1.setTitleColor("FFFFDAAA");
+widget1.setTextColor("FF9A73A9");
+widget1.setColor("FF6D92A0");
+widget1.setTitle("Sensor A103");
+widget1.setData("No readings received.");
+widget1.setUnits("cm");
 }
 </code></pre>
 <p>Certain types of widgets require extra methods for setup. They will be discussed below.</p>
+</li>
+</ol>
 <h3 id="creating-buttons">Creating Buttons</h3>
 <p>Buttons have 2 modes. A single press mode which waits for a response from the Andee shield and a multipress mode that can be press continuously.</p>
 <p>The button defaults to single press when instantiated. To set the button as multi press mode. Use the following code.</p>
@@ -312,6 +315,7 @@ char tempStringDate[20];
 <pre><code class="language-cpp">sprintf(tempString, &quot;%02d/%02d/%02d&quot;, dd, mm, yyyy);
 </code></pre>
 <p><br></p>
+<p>For full examples, you can refer to our built in examples in your Arduino IDE. Go to <code>File</code> -&gt; <code>Examples</code> -&gt; <code>Andee</code> for Andee U/iOS/Android</p>
               
             </div>
           </div><footer>
