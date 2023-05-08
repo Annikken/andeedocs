@@ -8,3 +8,5 @@ nav:
         - 'Before You Code': 'BeforeYouCode.md'
         - 'Examples': 'Examples.md'
         - 'Andee API': 'AndeeAPI.md'
+        
+    - 'Troubleshooting': 'Troubleshoot.md'

@@ -2,7 +2,6 @@
 
 Thank you for purchasing the Annikken Andee shield! Before you start coding your first project with Annikken Andee, here are the steps required for Annikken Andee to work.
 
-## Before You Code
 In order to use the Andee101 Library in your sketch , we require the following libraries:
 
 1. SPI.h
