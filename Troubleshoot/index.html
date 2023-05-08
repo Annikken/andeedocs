@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Troubleshooting - Andee Documentation</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Troubleshooting";
+        var mkdocs_page_input_path = "Troubleshoot.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Andee Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../AnnikkenProducts/">Andee Products</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../AndeeSetup/">First Time Setup</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Andee U/iOS/Android Shield</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../BeforeYouCode/">Before You Code</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Examples/">Examples</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../AndeeAPI/">Andee API</a>
+                  </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Troubleshooting</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#common-problems-seen-on-andee">Common Problems Seen on Andee</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#installing-andee-firmware">Installing Andee Firmware</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#andee-uandroid">Andee U/Android</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#andee-ios">Andee iOS</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Andee Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>Troubleshooting</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="troubleshooting">Troubleshooting</h1>
+<h2 id="common-problems-seen-on-andee">Common Problems Seen on Andee</h2>
+<table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Connection LED blinking or solid RED <br> when phone is not connected to it</td>
+<td>Remove the USB cable from the <br> Arduino and attach it again (Power cycle).</td>
+</tr>
+<tr>
+<td>Status LED blinking or solid Red</td>
+<td>Remove the USB cable from the <br> Arduino and attach it again (Power cycle).</td>
+</tr>
+<tr>
+<td>Phone is connected to Andee<br> but no UI on display</td>
+<td>Try these in order <ul><li>Check to make sure Andee is not paired to the phone.</li><li>Power cycle the Arduino.</li><li>Check and make sure <code>yourwidgetname.update()</code> is in your code.</li><li>Check to make sure Andee app is updated.</li><li>Check to make sure Andee firmware is the latest (v3.1.0).</li></ul></td>
+</tr>
+<tr>
+<td>Your Andee Board is the Android<br>board but does not look like<br>the one shown on this site</td>
+<td>Please email us at andee@annikken.com</td>
+</tr>
+</tbody>
+</table>
+<p>Please <a href="mailto:andee@annikken.com">email us</a> if the problem you are having is not listed above or if you are unsure aboutusing the Andee board.</p>
+<h2 id="installing-andee-firmware">Installing Andee Firmware</h2>
+<p>Annikken regularly releases new firmware updates for the Andee U, iOS and Android. It is recommended that you update the firmware on your shield when a new update is released. To do so, you require the following items:</p>
+<ul>
+<li>1x Micro SD Card.</li>
+<li>1x Micro SD Card Reader/Writer (or a computer capable of reading/writing Micro SD Cards).</li>
+<li>1x Arduino Board.</li>
+<li>1x Annikken Andee U/iOS/Android shield.</li>
+</ul>
+<h3 id="andee-uandroid">Andee U/Android</h3>
+<p>This section provides instructions for firmware installation/upgrade for Annikken Andee U and Andee Android shields. Please follow the steps:</p>
+<ol>
+<li>
+<p>Download the latest firmware for your Andee shield listed below if you have not done so.</p>
+<ul>
+<li><a href="https://github.com/Annikken/annikken.github.io/raw/main/AndeeU%26iOS3.1.0.zip">Andee U</a></li>
+<li><a href="https://github.com/Annikken/annikken.github.io/raw/main/Android3.1.0.zip">Andee Android</a></li>
+</ul>
+</li>
+<li>
+<p>Extract the zip file and copy "image.hex" into your Micro SD card.</p>
+</li>
+<li>
+<p>Connect the Annikken Andee to the Arduino and power it up. You should see an LED blinking. The Andee is in "Normal Mode".</p>
+</li>
+<li>
+<p>We will now need to put the Andee into "Update Mode". Press and hold down the "BOOT" and "ANDEE RESET" buttons together. Don’t let go of them yet!</p>
+</li>
+</ol>
+<p><img alt="" src="../img/A2.jpg" /></p>
+<p><img alt="" src="../img/U2.jpg" /></p>
+<ol>
+<li>
+<p>While still holding down the "BOOT" button, release the "ANDEE RESET" button. You should see that "CONN" and "STATUS" LEDS are now flashing RED together.</p>
+</li>
+<li>
+<p>Now let go of the "BOOT" button. </p>
+</li>
+</ol>
+<p><img alt="" src="../img/A3.jpg" /></p>
+<p><img alt="" src="../img/U3.jpg" /></p>
+<ol>
+<li>
+<p>Insert the Micro SD card containing "image.hex" you loaded earlier into the Annikken Andee's SD card slot. Annikken Andee will automatically start updating. The LEDs will flash red and green consecutively. Do not power down the shield at this time.</p>
+</li>
+<li>
+<p>Once the update/installation has completed, the "CONN" and "STATUS" LEDs will start to blink green again.</p>
+</li>
+</ol>
+<p><img alt="" src="../img/A1.jpg" /></p>
+<p><img alt="" src="../img/U1.jpg" /></p>
+<p>You're done! Your Annikken Andee Shield is now updated with the latest firmware!</p>
+<h3 id="andee-ios">Andee iOS</h3>
+<p>This section provides instructions for firmware installation/upgrade for Annikken Andee iOS shields. Please follow the steps:</p>
+<ol>
+<li>
+<p>Download the latest firmware for Andee iOS <a href="https://github.com/Annikken/annikken.github.io/raw/main/AndeeU%26iOS3.1.0.zip">here</a> if you have not done so.</p>
+</li>
+<li>
+<p>Extract the zip file and copy "image.hex" into your Micro SD card.</p>
+</li>
+<li>
+<p>Connect the Annikken Andee to the Arduino and power it up. You should see an LED blinking. The Andee is in "Normal Mode".</p>
+</li>
+<li>
+<p>We will now need to put the Andee into "Update Mode". Press and hold down the "BTN_0" and "BTN_1" buttons together. Don’t let go of them yet!</p>
+</li>
+</ol>
+<p><img alt="" src="../img/I2.jpg" /></p>
+<ol>
+<li>
+<p>While still holding down the "BTN_1" button, release the "BTN_0" button. You should see that "CONN" and "STATUS" LEDS are now flashing RED together.</p>
+</li>
+<li>
+<p>Now let go of the "BTN_1" button. </p>
+</li>
+</ol>
+<p><img alt="" src="../img/I3.jpg" /></p>
+<ol>
+<li>
+<p>Insert Micro SD card containing "image.hex" you loaded earlier into the Annikken Andee's SD card slot. Annikken Andee will automatically start updating. The LEDs will flash red and green consecutively. Do not power down the shield at this time.</p>
+</li>
+<li>
+<p>Once the update/installation has completed, the "CONN" and "STATUS" LEDs will start to blink green again.</p>
+</li>
+</ol>
+<p><img alt="" src="../img/I1.jpg" /></p>
+<p>You're done! Your Annikken Andee iOS shield is now updated with the latest firmware!</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../AndeeAPI/" class="btn btn-neutral float-left" title="Andee API"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../AndeeAPI/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
