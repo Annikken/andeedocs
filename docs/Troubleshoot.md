@@ -9,7 +9,7 @@
 | Phone is connected to Andee<br> but no UI on display | Try these in order <ul><li>Check to make sure Andee is not paired to the phone.</li><li>Power cycle the Arduino.</li><li>Check and make sure `yourwidgetname.update()` is in your code.</li><li>Check to make sure Andee app is updated.</li><li>Check to make sure Andee firmware is the latest (v3.1.0).</li></ul> |
 | Your Andee Board is the Android<br>board but does not look like<br>the one shown on this site  | Please email us at andee@annikken.com |
 
-Please [email us](mailto:andee@annikken.com) if the problem you are having is not listed above or if you are unsure aboutusing the Andee board.
+Please [email us](mailto:andee@annikken.com) if the problem you are having is not listed above or if you are unsure about using the Andee board.
 
 ## Installing Andee Firmware
 
